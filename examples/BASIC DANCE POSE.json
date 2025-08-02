@@ -1,8 +1,8 @@
 {
   "id": "1cfa29c0-d862-4e09-acc3-6b5b1e803d1b",
   "revision": 0,
-  "last_node_id": 3,
-  "last_link_id": 2,
+  "last_node_id": 4,
+  "last_link_id": 6,
   "nodes": [
     {
       "id": 1,
@@ -13,7 +13,7 @@
       ],
       "size": [
         310.5086669921875,
-        404.20489501953125
+        414
       ],
       "flags": {},
       "order": 1,
@@ -30,13 +30,14 @@
           "name": "pose_video",
           "type": "IMAGE",
           "links": [
-            1
+            1,
+            3
           ]
         },
         {
           "name": "audio",
           "type": "AUDIO",
-          "links": null
+          "links": []
         }
       ],
       "properties": {
@@ -44,21 +45,29 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
+        0,
+        10,
         480,
         832,
         24,
         "energetic",
-        0.7,
-        0.6,
-        "black"
+        0.4,
+        0.31000000000000005,
+        "march",
+        0.5,
+        "1x",
+        "black",
+        69924,
+        "randomize",
+        false
       ]
     },
     {
       "id": 2,
       "type": "PreviewImage",
       "pos": [
-        -3244.72314453125,
-        1150.7010498046875
+        -3094.14013671875,
+        989.7335205078125
       ],
       "size": [
         140,
@@ -103,7 +112,8 @@
           "name": "AUDIO",
           "type": "AUDIO",
           "links": [
-            2
+            2,
+            6
           ]
         }
       ],
@@ -114,10 +124,88 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "10 second test.wav",
+        "Calling - Spaceman The DJ (epic Jouirney MIx).mp3",
         null,
         null
       ]
+    },
+    {
+      "id": 4,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -3333.132080078125,
+        1206.8448486328125
+      ],
+      "size": [
+        214.7587890625,
+        685.5819091796875
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 3
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 6
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "1.6.1",
+        "Node name for S&R": "VHS_VideoCombine",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "BASIC DANCE POSE",
+        "format": "video/nvenc_h264-mp4",
+        "pix_fmt": "yuv420p",
+        "bitrate": 10,
+        "megabit": true,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": true,
+          "params": {
+            "filename": "BASIC DANCE POSE_00008-audio.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/nvenc_h264-mp4",
+            "frame_rate": 24,
+            "workflow": "BASIC DANCE POSE_00008.png",
+            "fullpath": "F:\\ComfyUI\\output\\BASIC DANCE POSE_00008-audio.mp4"
+          }
+        }
+      }
     }
   ],
   "links": [
@@ -136,6 +224,22 @@
       1,
       0,
       "AUDIO"
+    ],
+    [
+      3,
+      1,
+      0,
+      4,
+      0,
+      "IMAGE"
+    ],
+    [
+      6,
+      3,
+      0,
+      4,
+      1,
+      "AUDIO"
     ]
   ],
   "groups": [],
@@ -144,10 +248,10 @@
     "ue_links": [],
     "links_added_by_ue": [],
     "ds": {
-      "scale": 1.2839025177495025,
+      "scale": 0.9646149645000008,
       "offset": [
-        4242.322434273252,
-        -943.635811636489
+        4261.2153956771535,
+        -773.8068820100725
       ]
     },
     "frontendVersion": "1.23.4",
